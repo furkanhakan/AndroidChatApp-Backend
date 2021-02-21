@@ -14,6 +14,10 @@ admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
 });
 
+app.get('/', (req, res) => {
+    res.end('Home')
+})
+
 app.post('/sendMessage', (req, res) => {
     const token = req.body.token
     const title = req.body.title
@@ -42,5 +46,5 @@ app.post('/sendMessage', (req, res) => {
 
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+
 })
